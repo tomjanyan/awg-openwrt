@@ -130,6 +130,7 @@ jobs:
 
       - name: Setup SDK and feeds
         run: |
+          export FORCE=1
           # Find SDK directory
           SDK_DIR=$(find . -maxdepth 1 -name "immortalwrt-sdk-*" -type d | head -n1)
           
