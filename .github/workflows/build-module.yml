@@ -160,7 +160,7 @@ jobs:
             echo "CONFIG_PACKAGE_luci-i18n-amneziawg-ru=y"
           } > .config
           
-          make defconfig
+          make defconfig FORCE=1
 
       - name: Build AmneziaWG packages
         run: |
@@ -176,7 +176,7 @@ jobs:
             package/kmod-amneziawg/compile \
             package/amneziawg-tools/compile \
             package/luci-proto-amneziawg/compile \
-            V=s
+            V=s FORCE=1
           
           echo "Build completed. Checking for built packages..."
           find bin/ -name "*.?pk" | grep -E "(amneziawg|luci-proto-amneziawg|luci-i18n-amneziawg)" | head -10
